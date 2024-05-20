@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .q li{
+            display: inline-block;
+        }
+        .w li p{
+            display: inline-block;
+        }
+        .e {
+            margin-right: 15px;
+
+        }
+        .alert alert-danger{
+            visibility: hidden;
+        }
+        .page li{
+            display: inline-block;
+        }
+        .page-li li{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="font">
+
+    </div>
+    <div class="col-6">
+        <div class="input-group">
+            <input type="text" id="search_kw" class="form-control" th:value="${kw}">
+            <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
+        </div>
+    </div>
+    <form th:action="@{/survey}" method="post" name="survey" id="survey" th:object="${surveyForm}">
+<!--        <div th:replace="~{form_errors :: formErrorsFragment}" style="visibility: hidden"></div>-->
+        <div class="survey">
+            <ul class="q">
+                <li><h3>원하는 것을 고르시오</h3></li>
+                <li><input type="radio" th:field="*{q}" id="q1" value="1"><label for="q1">항목 1</label></li>
+                <li><input type="radio" th:field="*{q}" id="q2" value="2"><label for="q2">항목 2</label></li>
+                <li><input type="radio" th:field="*{q}" id="q3" value="3"><label for="q3">항목 3</label></li>
+                <li><input type="radio" th:field="*{q}" id="q4" value="4"><label for="q4">항목 4</label></li>
+                <li><input type="radio" th:field="*{q}" id="q5" value="5"><label for="q5">항목 5</label></li>
+            </ul>
+            <div th:if="${#fields.hasErrors('q')}">
+                <p style="color: red;">q값을 입력해주십시요</p>
+            </div>
+            <ul class="q">
+                <li><h3>원하는 것을 고르시오</h3></li>
+                <li><input type="radio" th:field="*{w}" id="w1" value="1"><label for="w1">항목 1</label></li>
+                <li><input type="radio" th:field="*{w}" id="w2" value="2"><label for="w2">항목 2</label></li>
+                <li><input type="radio" th:field="*{w}" id="w3" value="3"><label for="w3">항목 3</label></li>
+                <li><input type="radio" th:field="*{w}" id="w4" value="4"><label for="w4">항목 4</label></li>
+                <li><input type="radio" th:field="*{w}" id="w5" value="5"><label for="w5">항목 5</label></li>
+            </ul>
+            <div th:if="${#fields.hasErrors('w')}">
+                <p style="color: red;">q값을 입력해주십시요</p>
+            </div>
+            <ul class="q">
+                <li><h3>원하는 것을 고르시오</h3></li>
+                <li><input type="radio" th:field="*{e}" id="e1" value="1"><label for="e1">항목 1</label></li>
+                <li><input type="radio" th:field="*{e}" id="e2" value="2"><label for="e2">항목 2</label></li>
+                <li><input type="radio" th:field="*{e}" id="e3" value="3"><label for="e3">항목 3</label></li>
+                <li><input type="radio" th:field="*{e}" id="e4" value="4"><label for="e4">항목 4</label></li>
+                <li><input type="radio" th:field="*{e}" id="e5" value="5"><label for="e5">항목 5</label></li>
+            </ul>
+            <div th:if="${#fields.hasErrors('e')}">
+                <p style="color: red;">q값을 입력해주십시요</p>
+            </div>
+            <ul class="q">
+                <li><h3>원하는 것을 고르시오</h3></li>
+                <li><input type="radio" th:field="*{r}" id="r1" value="1"><label for="r1">항목 1</label></li>
+                <li><input type="radio" th:field="*{r}" id="r2" value="2"><label for="r2">항목 2</label></li>
+                <li><input type="radio" th:field="*{r}" id="r3" value="3"><label for="r3">항목 3</label></li>
+                <li><input type="radio" th:field="*{r}" id="r4" value="4"><label for="r4">항목 4</label></li>
+                <li><input type="radio" th:field="*{r}" id="r5" value="5"><label for="r5">항목 5</label></li>
+            </ul>
+            <div th:if="${#fields.hasErrors('r')}">
+                <p style="color: red;">q값을 입력해주십시요</p>
+            </div>
+            <ul class="q">
+                <li><h3>원하는 것을 고르시오</h3></li>
+                <li><input type="radio" th:field="*{a}" id="a1" value="1"><label for="a1">항목 1</label></li>
+                <li><input type="radio" th:field="*{a}" id="a2" value="2"><label for="a2">항목 2</label></li>
+                <li><input type="radio" th:field="*{a}" id="a3" value="3"><label for="a3">항목 3</label></li>
+                <li><input type="radio" th:field="*{a}" id="a4" value="4"><label for="a4">항목 4</label></li>
+                <li><input type="radio" th:field="*{a}" id="a5" value="5"><label for="a5">항목 5</label></li>
+            </ul>
+            <div th:if="${#fields.hasErrors('a')}">
+                <p style="color: red;">q값을 입력해주십시요</p>
+            </div>
+            <ul class="q">
+                <li><h3>원하는 것을 고르시오</h3></li>
+                <li><input type="radio" th:field="*{s}" id="s1" value="1"><label for="s1">항목 1</label></li>
+                <li><input type="radio" th:field="*{s}" id="s2" value="2"><label for="s2">항목 2</label></li>
+                <li><input type="radio" th:field="*{s}" id="s3" value="3"><label for="s3">항목 3</label></li>
+                <li><input type="radio" th:field="*{s}" id="s4" value="4"><label for="s4">항목 4</label></li>
+                <li><input type="radio" th:field="*{s}" id="s5" value="5"><label for="s5">항목 5</label></li>
+            </ul>
+            <div th:if="${#fields.hasErrors('s')}">
+                <p style="color: red;">q값을 입력해주십시요</p>
+            </div>
+            <ul class="q">
+                <li><h3>원하는 것을 고르시오</h3></li>
+                <li><input type="radio" th:field="*{d}" id="d1" value="1"><label for="d1">항목 1</label></li>
+                <li><input type="radio" th:field="*{d}" id="d2" value="2"><label for="d2">항목 2</label></li>
+                <li><input type="radio" th:field="*{d}" id="d3" value="3"><label for="d3">항목 3</label></li>
+                <li><input type="radio" th:field="*{d}" id="d4" value="4"><label for="d4">항목 4</label></li>
+                <li><input type="radio" th:field="*{d}" id="d5" value="5"><label for="d5">항목 5</label></li>
+            </ul>
+            <div th:if="${#fields.hasErrors('d')}">
+                <p style="color: red;">q값을 입력해주십시요</p>
+            </div>
+            <ul class="q">
+                <li><h3>원하는 것을 고르시오</h3></li>
+                <li><input type="radio" th:field="*{f}" id="f1" value="1"><label for="f1">항목 1</label></li>
+                <li><input type="radio" th:field="*{f}" id="f2" value="2"><label for="f2">항목 2</label></li>
+                <li><input type="radio" th:field="*{f}" id="f3" value="3"><label for="f3">항목 3</label></li>
+                <li><input type="radio" th:field="*{f}" id="f4" value="4"><label for="f4">항목 4</label></li>
+                <li><input type="radio" th:field="*{f}" id="f5" value="5"><label for="f5">항목 5</label></li>
+            </ul>
+            <div th:if="${#fields.hasErrors('f')}">
+                <p style="color: red;">q값을 입력해주십시요</p>
+            </div>
+        </div>
+        <input type="submit" value="내보내기">
+    </form>
+    <div>
+        <h3>검사 결과 점수</h3>
+        <ul>
+            <li>
+                <a class="nav-link btn btn-primary text-white" th:href="@{/survey?sort=views}">조회순</a>
+                <a class="nav-link btn btn-primary text-white" th:href="@{/survey?sort=create_at}">최신순</a>
+            </li>
+        </ul>
+        <ul class="w">
+            <li th:each="survey : ${surveyList}">
+                <p>
+                    <a th:href="@{/survey/{id}(id=${survey.idx})}"><span th:text="${survey.idx}"></span>번째 :</a>
+                    Q: <span th:text="${survey.q}"></span>
+                    W: <span th:text="${survey.w}"></span>
+                    E: <span th:text="${survey.e}"></span>
+                    R: <span th:text="${survey.r}"></span>
+                    A: <span th:text="${survey.a}"></span>
+                    S: <span th:text="${survey.s}"></span>
+                    D: <span th:text="${survey.d}"></span>
+                    F: <span th:text="${survey.f}"></span>
+                </p>
+                <p>총 점수: <span th:text="${survey.q + survey.w + survey.e + survey.r + survey.a + survey.s + survey.d + survey.f}"></span>
+                    작성 날짜 : <span th:text="${survey.createAt}"></span>
+                    조회수 : <span th:text="${survey.views}"></span></p>
+            </li>
+        </ul>
+
+        <!-- 페이징처리 시작 -->
+        <div th:if="${!paging.isEmpty()}">
+            <ul class="page">
+                <li class="page-li" th:classappend="${!paging.hasPrevious()} ? 'disabled'">
+                    <a class="" th:href="@{/survey(page=${paging.number - 1}, sort=${sort}, kw=${kw})}">
+                        <span>이전</span>
+                    </a>
+                </li>
+                <li th:each="page : ${#numbers.sequence(0, paging.totalPages - 1)}"
+                    th:classappend="${page == paging.number} ? 'active'" class="page-item">
+                    <a th:href="@{/survey(page=${page}, sort=${sort}, kw=${kw})}" class="page-link" th:text="${page + 1}"></a>
+                </li>
+                <li class="" th:classappend="${!paging.hasNext()} ? 'disabled'">
+                    <a class="" th:href="@{/survey(page=${paging.number + 1}, sort=${sort}, kw=${kw})}">
+                        <span>다음</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 페이징처리 끝 -->
+
+        <!-- 검색기능 폼으로 보내기 시작 -->
+        <form th:action="@{/survey}" method="get" id="searchForm">
+            <input type="hidden" id="kw" name="kw" th:value="${kw}">
+            <input type="hidden" id="page" name="page" th:value="${paging.number}">
+        </form>
+        <!-- 검색기능 폼으로 보내기 끝 -->
+</body>
+<script>
+    document.getElementById("btn_search").addEventListener("click", function() {
+        var keyword = document.getElementById("search_kw").value;
+        document.getElementById("kw").value = keyword;
+        document.getElementById("searchForm").submit();
+    });
+</script>
+</html>

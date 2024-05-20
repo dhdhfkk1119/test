@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Survey Detail</title>
+</head>
+<body>
+<h1>Survey Detail</h1>
+<div>
+    <p>ID: <span th:text="${survey.idx}"></span></p>
+    <p>Q: <span th:text="${survey.q}"></span></p>
+    <p>W: <span th:text="${survey.w}"></span></p>
+    <p>E: <span th:text="${survey.e}"></span></p>
+    <p>R: <span th:text="${survey.r}"></span></p>
+    <p>A: <span th:text="${survey.a}"></span></p>
+    <p>S: <span th:text="${survey.s}"></span></p>
+    <p>D: <span th:text="${survey.d}"></span></p>
+    <p>F: <span th:text="${survey.f}"></span></p>
+    <p>조회수: <span th:text="${survey.views}"></span></p>
+    <a href="/survey">Back to list</a>
+</div>
+</body>
+</html>
